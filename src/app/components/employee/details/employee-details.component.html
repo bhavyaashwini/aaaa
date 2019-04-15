@@ -1,0 +1,31 @@
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
+
+<div class="w3-container" *ngIf="employeeDetail">
+	<div class="w3-panel w3-round-small w3-teal">
+		<h3>employee Details <button [routerLink]="['/update', index]" class="w3-button w3-blue custom-button"> <i class="w3-medium fa fa-pencil"></i> Edit</button> <button routerLink="/" class="w3-button w3-green custom-button margin-right"> <i class="w3-medium fa fa-chevron-left"></i> Back</button></h3>
+	</div>
+	<div class=" w3-card custom-card"><br>
+		<h3 class="text-center">{{employeeDetail.language}} {{employeeDetail.rating}}</h3>
+		<hr>
+		<table class="w3-table w3-bordered">
+			<tr>
+				<td>Language</td>
+				<td>: <b>{{employeeDetail.language}}</b></td>
+			</tr>
+			<tr>
+				<td>Rating</td>
+				<td>: <b>{{employeeDetail.rating}}</b></td>
+			</tr>
+			<tr>
+				<td>TotalExperience</td>
+				<td>: <b>{{employeeDetail.totalexperience}}</b></td>
+			</tr>
+			<tr>
+				<td> year</td>
+				<td>: <b>{{employeeDetail.year}}</b></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->

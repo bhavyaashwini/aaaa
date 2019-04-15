@@ -1,0 +1,33 @@
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
+
+<div class="w3-container" *ngIf="employeeListData">
+	<div class="w3-panel w3-round-small w3-teal">
+		<h3>Employee details <button routerLink="/add" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Add New employee</button></h3>
+	</div>
+	
+<div class="w3-panel w3-light-grey w3-padding-16 w3-card-2" *ngIf="(employeeListData | filter:filterData | filter:filterData).length != 0">
+		<table class="w3-table w3-striped w3-bordered">
+			<tr>
+				<th> Sl. No.</th>
+				<!-- <th>ID</th> -->
+				<th>Languages</th>
+				<th> Rating</th>
+				<th> Total Experience</th>
+				<th> Year</th>
+				<th> Action</th>
+				
+			</tr>
+			<tr *ngFor="let employee of employeeListData | filter:filterData; index as i;" appHighlightemployee>
+				<td>{{i +1}}</td>
+				<td class="pointer" [routerLink]="['detail', i]">{{employee.languages}} </td>
+				<td class="pointer" [routerLink]="['detail', i]">{{employee.rating}}</td>
+				<td class="pointer" [routerLink]="['detail', i]">{{employee.totalexperience}}</td>
+				<td class="pointer" [routerLink]="['detail', i]">{{employee.year}}</td>
+				<td><button [routerLink]="['update', i]" class="w3-button w3-blue">Update</button>
+				<button (click)="deleteemployee(i);" class="w3-button w3-red">Delete</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
